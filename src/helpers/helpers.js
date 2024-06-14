@@ -11,7 +11,7 @@ Vue.use(VueFlashMessage, {
 });
 
 const vm = new Vue();
-const baseURL = process.env.VUE_APP_BASE_URL;
+const baseURL = process.env.VUE_APP_ROUTER_URL;
 
 const handleError =
   (fn) =>
