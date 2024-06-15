@@ -1,4 +1,4 @@
-# front-end
+Vocab Builder
 
 ## Project setup
 ```
