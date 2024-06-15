@@ -11,7 +11,7 @@ Vue.use(Router);
 
 export default new Router({
   mode: "history",
-  base: process.env.VUE_APP_ROUTER_URL, // Ensure BASE_URL is correctly set in .env file
+  base: process.env.VUE_APP_BASE_URL,
   linkActiveClass: "active",
   routes: [
     {
