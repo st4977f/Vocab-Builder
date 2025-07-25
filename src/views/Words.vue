@@ -16,26 +16,26 @@
           <td>{{ word.german }}</td>
           <td>{{ word.spanish }}</td>
           <td class="center aligned">
-            <router-link
-              :to="{ name: 'show', params: { id: word._id } }"
-              class="ui mini teal button"
-              style="margin-right: 5px;"
-            >
-              Show
-            </router-link>
-            <router-link
-              :to="{ name: 'edit', params: { id: word._id } }"
-              class="ui mini blue button"
-              style="margin-right: 5px;"
-            >
-              Edit
-            </router-link>
-            <button
-              class="ui mini red button"
-              @click.prevent="onDestroy(word._id)"
-            >
-              Destroy
-            </button>
+            <div class="ui mini buttons">
+              <router-link
+                :to="{ name: 'show', params: { id: word._id } }"
+                class="ui teal button"
+              >
+                Show
+              </router-link>
+              <router-link
+                :to="{ name: 'edit', params: { id: word._id } }"
+                class="ui blue button"
+              >
+                Edit
+              </router-link>
+              <button
+                class="ui red button"
+                @click.prevent="onDestroy(word._id)"
+              >
+                Destroy
+              </button>
+            </div>
           </td>
         </tr>
       </tbody>
