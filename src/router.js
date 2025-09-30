@@ -9,9 +9,12 @@ import User from "./views/User.vue";
 
 Vue.use(Router);
 
+const baseUrl = process.env.VUE_APP_BASE_URL || '';
+console.log("Router base:", baseUrl);
+
 export default new Router({
   mode: "history",
-  base: process.env.VUE_APP_BASE_URL || '/',
+  base: baseUrl,
   linkActiveClass: "active",
   routes: [
     {
