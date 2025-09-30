@@ -1,15 +1,15 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Words from "./views/Words.vue";
+import Words from "views./views/Words.vue";
 import New from "./views/New.vue";
 import Show from "./views/Show.vue";
-import Edit from "./views/Edit.vue";
+import Edit from ".//Edit.vue";
 import Test from "./views/Test.vue";
 import User from "./views/User.vue";
 
 Vue.use(Router);
 
-const baseUrl = process.env.VUE_APP_BASE_URL || '/vocab/';
+const baseUrl = process.env.VUE_APP_BASE_URL || '';
 console.log("Router base:", baseUrl);
 
 export default new Router({
