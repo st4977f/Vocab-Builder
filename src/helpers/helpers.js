@@ -29,23 +29,28 @@ const handleError =
 
 export const api = {
   getWord: handleError(async (id) => {
-    const res = await axios.get(baseURL + id);
+    console.log('API call to:', `${baseURL}/words/${id}`);
+    const res = await axios.get(`${baseURL}/words/${id}`);
     return res.data;
   }),
   getWords: handleError(async () => {
-    const res = await axios.get(baseURL);
+    console.log('API call to:', `${baseURL}/words`);
+    const res = await axios.get(`${baseURL}/words`);
     return res.data;
   }),
   deleteWord: handleError(async (id) => {
-    const res = await axios.delete(baseURL + id);
+    console.log('API call to:', `${baseURL}/words/${id}`);
+    const res = await axios.delete(`${baseURL}/words/${id}`);
     return res.data;
   }),
   createWord: handleError(async (payload) => {
-    const res = await axios.post(baseURL, payload);
+    console.log('API call to:', `${baseURL}/words`);
+    const res = await axios.post(`${baseURL}/words`, payload);
     return res.data;
   }),
   updateWord: handleError(async (payload) => {
-    const res = await axios.put(baseURL + payload._id, payload);
+    console.log('API call to:', `${baseURL}/words/${payload._id}`);
+    const res = await axios.put(`${baseURL}/words/${payload._id}`, payload);
     return res.data;
   }),
 };
