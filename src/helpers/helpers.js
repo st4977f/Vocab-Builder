@@ -11,7 +11,7 @@ Vue.use(VueFlashMessage, {
 });
 
 const vm = new Vue();
-const baseURL = process.env.VUE_APP_API_BASE_URL || '/api';;
+const baseURL = process.env.VUE_APP_BASE_URL;
 
 const handleError =
   (fn) =>
@@ -29,28 +29,23 @@ const handleError =
 
 export const api = {
   getWord: handleError(async (id) => {
-    console.log('API call to:', `${baseURL}/words/${id}`);
-    const res = await axios.get(`${baseURL}/words/${id}`);
+    const res = await axios.get(baseURL + id);
     return res.data;
   }),
   getWords: handleError(async () => {
-    console.log('API call to:', `${baseURL}/words`);
-    const res = await axios.get(`${baseURL}/words`);
+    const res = await axios.get(baseURL);
     return res.data;
   }),
   deleteWord: handleError(async (id) => {
-    console.log('API call to:', `${baseURL}/words/${id}`);
-    const res = await axios.delete(`${baseURL}/words/${id}`);
+    const res = await axios.delete(baseURL + id);
     return res.data;
   }),
   createWord: handleError(async (payload) => {
-    console.log('API call to:', `${baseURL}/words`);
-    const res = await axios.post(`${baseURL}/words`, payload);
+    const res = await axios.post(baseURL, payload);
     return res.data;
   }),
   updateWord: handleError(async (payload) => {
-    console.log('API call to:', `${baseURL}/words/${payload._id}`);
-    const res = await axios.put(`${baseURL}/words/${payload._id}`, payload);
+    const res = await axios.put(baseURL + payload._id, payload);
     return res.data;
   }),
 };
