@@ -9,7 +9,7 @@ import User from "./views/User.vue";
 
 Vue.use(Router);
 
-const baseUrl = process.env.VUE_APP_BASE_URL || '';
+const baseUrl = process.env.VUE_APP_BASE_URL || '/vocab/';
 console.log("Router base:", baseUrl);
 
 export default new Router({
